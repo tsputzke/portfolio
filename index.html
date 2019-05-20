@@ -6,62 +6,70 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Timothy Putzke - Fullstack Web Developer</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:400,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
   <main role="main">
     <nav> 
-      <span id="name-span">Timothy Putzke</span>
-      <button type="button">about.</button>
-      <button type="button">portfolio.</button>
-      <button type="button">contact.</button>
+      <span id="nav-name">Timothy Putzke</span>
+      <button type="button" id="about-button" class="nav-button">About</button>
+      <button type="button" id="portfolio-button" class="nav-button">Portfolio</button>
+      <button type="button" id="contact-button" class="nav-button">Contact</button>
     </nav>
-    <div role="icon-menu" id="icon-menu">
-      <ul id="menu-icons">
-        <li id="email"><i class="fas fa-envelope"></i></li>
-        <li id="linkedIn"><i class="fab fa-linkedin"></i></li>
-        <li id="github"><i class="fab fa-github"></i></li>
-      </ul>
-    </div>
     <header role="header-content">
       <img src="images/portrait.jpg" alt="self-portrait" id="portrait">
       <div id="hero"> 
         <h1 id="headline">
-          Hi, I’m Tim.
+          Hi, I’m <span class="red">Tim.</span>
         </br></br>
-          I’m a fullstack developer who creates awesome, user centered designs.
+          I’m a <span class="red">Full Stack Developer</span> creating awesome, user centered applications.
         </h1>
       </div>
     </header> 
   </main> 
-  <section role="aboutMe" id="about-me">
-    <h2>About Me:</h2>
+  <section role="aboutMe" id="about-me" class="primary">
+    <h2>About Me</h2>
     <p>I am a web-developer passionate about UX and clean code. I love the process of discovering eloquent solutions to technical problems, and bringing ideas to life. I am experienced in HTML, CSS, and Javascript. 
     </br></br> 
     I currently live in Raleigh, NC, and when I am not coding I may be found gardening, cooking, or building robots out of legos with my two daughters.
     </p>
   </section>
-  <section role="portfolio" id="portfolio">
-    <h2>Portfolio:</h2>
-    </h3>State Amphibian Quiz</h3>
-    <img src="images/Amphibian App Screenshot (1).png" alt="screenshot of Amphibian App" class="portfolio-photo">
-    <p>How well do you know your state amphibians? Test your knowledge with this quiz app.</p> 
-    <h4>Technologies used:</h4>
-    <ul class="technology-used-icons">
-      <li><i class="fab fa-html5"></i><aside>HTML</aside></li>
-      <li><i class="fab fa-css3-alt"></i><aside>CSS</aside></li>
-      <li><i class="fab fa-js-square"></i><aside>JavaScript</aside></li>
-    </ul>
-    <a href="https://tsputzke.github.io/QuizApp/">Live</a>
-    <a href="https://github.com/tsputzke/QuizApp">Github</a>
+  <section role="portfolio" id="portfolio" class="primary">
+    <section id="quiz">
+      <h2>Portfolio</h2>
+      <h3>State Amphibian Quiz</h3>
+      <img src="images/amphibianappmockup.jpg" alt="screenshot of Amphibian App" class="portfolio-photo">
+      <ul class="live">
+        <li><button type="button" id="amphibian-live" class="live-button">Live</button></li>
+        <li><button type="button" id="amphibian-github" class="live-button">Github</button></li>
+      </ul>   
+      <p>How well do you know your state amphibians? Test your knowledge with this quiz app.</p> 
+      </br>
+      <h4>Technologies used:</h4>
+      <ul class="technology-used-icons">
+        <li><i class="devicon-html5-plain-wordmark colored"></i></li>
+        <li><i class="devicon-css3-plain-wordmark colored"></i></li>
+        <li><i class="devicon-javascript-plain"></i></li>
+        <li><i class="devicon-jquery-plain-wordmark colored"></i></li>
+      </ul>
+    </section>
   </section>
-  <section role="contact" id="contact">
-    <h2>Contact Me:</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus debitis optio veritatis accusamus architecto iste harum maiores cum adipisci dolor corporis fuga asperiores, dolore error quibusdam quae. Eligendi, at. Expedita!</p>
+  <section role="contact" id="contact" class="primary">
+    <h2>Contact Me</h2>
+    <p>Feel free to <span class="red">reach out!</span> I love connecting to discuss work, current projects, or answer any questions. I truly enjoy helping people, and making great applications.</p>
+    <div role="icon-menu" id="icon-menu">
+        <ul id="menu-icons">
+          <li id="email"><i class="fas fa-envelope"></i></li>
+          <li id="linkedIn"><i class="fab fa-linkedin"></i></li>
+          <li id="github"><i class="fab fa-github"></i></li>
+        </ul>
+      </div>
   </section>
   <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
