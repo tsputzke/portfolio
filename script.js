@@ -16,14 +16,6 @@ $('#contact-button').on('click or keypress', function(event) {
   }, 300);
 })
 
-$('#amphibian-live').on('click or keypress', event => {
-  window.location.href = "https://tsputzke.github.io/QuizApp/";
-})
-
-$('#amphibian-github').on('click or keypress', event => {
-  window.location.href = "https://github.com/tsputzke/QuizApp";
-})
-
 $('#email').on('click or keypress', event => {
   window.location.href = "mailto:tsputzke@gmail.com";
 })
@@ -34,4 +26,22 @@ $('#linkedIn').on('click or keypress', event => {
 
 $('#github').on('click or keypress', event => {
   window.location.href = "https://github.com/tsputzke";
+})
+
+// Portfolio
+
+$('#amphibian-live').on('click or keypress', event => {
+  window.location.href = "https://tsputzke.github.io/QuizApp/";
+})
+
+$('#amphibian-github').on('click or keypress', event => {
+  window.location.href = "https://github.com/tsputzke/QuizApp";
+})
+
+$('#booksplorer-live').on('click or keypress', event => {
+  window.location.href = "https://tsputzke.github.io/Booksplorer/";
+})
+
+$('#booksplorer-github').on('click or keypress', event => {
+  window.location.href = "https://github.com/tsputzke/Booksplorer";
 })

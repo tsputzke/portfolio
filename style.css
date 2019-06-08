@@ -147,6 +147,18 @@ h4 {
   margin: auto;
 }
 
+#portfolio section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 .live {
   display: flex;
   flex-wrap: wrap;
@@ -299,5 +311,10 @@ h4 {
 
   #icon-menu i {
     font-size: 50px;
+  }
+
+  #portfolio section {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }
