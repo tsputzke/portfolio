@@ -1,47 +1,78 @@
-$('#about-button').on('click or keypress', function(event) {
+$('#about-button, .arrow').on('click or keypress', function(event) {
   $('html, body').animate({
-    scrollTop: $("#about-me").offset().top - 60
+    scrollTop: $("#about-me").offset().top - 10
   }, 300);
 })
 
 $('#portfolio-button').on('click or keypress', function(event) {
   $('html, body').animate({
-    scrollTop: $("#portfolio").offset().top - 60
+    scrollTop: $("#portfolio").offset().top - 10
   }, 300);
 })
 
 $('#contact-button').on('click or keypress', function(event) {
   $('html, body').animate({
-    scrollTop: $("#contact").offset().top - 60
+    scrollTop: $("#contact").offset().top - 10
   }, 300);
 })
 
 $('#email').on('click or keypress', event => {
-  window.location.href = "mailto:tsputzke@gmail.com";
+  window.open('mailto:tsputzke@gmail.com', '_blank');
 })
 
 $('#linkedIn').on('click or keypress', event => {
-  window.location.href = "https://www.linkedin.com/in/timothy-putzke-0534b4a8/";
+  window.open('https://www.linkedin.com/in/timothy-putzke-0534b4a8/', '_blank');
 })
 
 $('#github').on('click or keypress', event => {
-  window.location.href = "https://github.com/tsputzke";
+  window.open('https://github.com/tsputzke', '_blank');
 })
 
 // Portfolio
 
-$('#amphibian-live').on('click or keypress', event => {
-  window.location.href = "https://tsputzke.github.io/QuizApp/";
+$('.cultivate-img').on('click or keypress', event => {
+  window.open('https://tsputzke-cultivate-app.now.sh/', '_blank');
 })
 
-$('#amphibian-github').on('click or keypress', event => {
-  window.location.href = "https://github.com/tsputzke/QuizApp";
+$('.booksplorer-img').on('click or keypress', event => {
+  window.open('https://tsputzke.github.io/Booksplorer/', '_blank');
 })
 
-$('#booksplorer-live').on('click or keypress', event => {
-  window.location.href = "https://tsputzke.github.io/Booksplorer/";
-})
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('nav').outerHeight();
 
-$('#booksplorer-github').on('click or keypress', event => {
-  window.location.href = "https://github.com/tsputzke/Booksplorer";
-})
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > navbarHeight){
+        // Scroll Down
+        $('nav').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('nav').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}

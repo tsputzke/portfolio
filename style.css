@@ -1,9 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 150%;
   font-size: 16px;
+}
+
+html {
+  height: 100%
 }
 
 body {
@@ -22,15 +26,14 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 50%;
 }
 
 img {
   display: block;
-  height: 250px;
-  width: auto;
+  height: auto;
+  width: 100%;
   margin: auto;
-  border-radius: 3px;
 }
 
 #headline {
@@ -41,19 +44,15 @@ img {
 }
 
 nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 15px;
-  order: 1;
+  display: none;
 }
 
 button {
-  border: 1px solid black;
-  width: 130px;
-  height: 30px;
+  background-color: inherit;
+  width: 100px;
+  height: 50px;
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 3px;
 }
 
 #icon-menu i {
@@ -70,37 +69,47 @@ button {
   max-width: 300px;
 }
 
+#menu-icons i {
+  font-size: 3em;
+}
+
 .technology-used-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  background-color: #f6f6f8;
+  width: 100%;
   list-style: none;
-  padding: 0px;
-  margin: auto;
-  max-width: 400px;
+  padding: 0;
+}
+
+.technology-used-icons td {
+  text-align: center;
+  padding: 10px 0;
 }
 
 .technology-used-icons i {
-  font-size: 30px;
+  font-size: 3.5em;
 }
 
 h1 {
+  font-size: 1.2em;
   padding: 10px;
 }
 
 h2 {
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 15px 0;
 }
 
 h3 {
-  text-align: center;
   margin-bottom: 20px;
   font-size: 20px;
+  text-decoration: underline;
 }
 h4 {
+  text-align: center;
   margin: auto;
-  padding-bottom: 10px;
   max-width: 500px;
+  padding-bottom: 10px;
 }
 
 .primary {
@@ -119,17 +128,32 @@ h4 {
 }
 
 .portfolio-photo {
-  width: 80%;
-  height: auto;
-  max-width: 600px;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
+}
+
+.portfolio-wrap {
   border: 1px solid black;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.portfolio-photo:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .red {
-  color: #c60021;
+  font-size: 1.1em;
+  color: #c53211;
 }
 
 #portfolio p {
+  text-align: center;
   max-width: 500px;
   margin: auto;
 }
@@ -148,66 +172,60 @@ h4 {
 }
 
 #portfolio section {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  width: 85%;
+  margin: 30px auto;
 }
 
+#portrait {
+  margin: 10% auto;
+  width: 70%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
 hr {
+  width: 90%;
+  margin: auto;
   border: 0;
   height: 1px;
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-.live {
-  display: flex;
-  flex-wrap: wrap;
-  
+/* Bounce Scroll Down Arrow: */
+a { color: black; text-decoration: none; }
+
+.arrow {
+  position: absolute;
+  bottom: 10%;
+  align-self: center;
 }
 
-.nav-button {
-  border: none;
-  background-color
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 
-#nav-name {
-  display: none;
-  margin-right: auto;
-  font-family: 'Playfair Display', sans-serif;
-  color: #f6f6f8;
-  font-size: 25spx;
-}
-
-.live-button {
-  background-color: #2f435e;
-  color: #f6f6f8;
-  border: 1px solid #c60021;
-  width: 100px;
-}
-
-.nav-button:hover {
-  color: #c60021;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 /* Media Queries */
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 750px) {
   * {
-    font-size: 18px;
-  }
-
-  nav {
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    flex-direction: row;
-    justify-content: flex-end; 
-    background-color: #2f435e;
-    margin: 0px;
-    padding: 0 5%;
-    order: 0;
+    font-size: 20px;
   }
 
   body {
@@ -218,6 +236,41 @@ hr {
     top: 60px;
     width: 80%;
     margin: auto;
+    background: url("/images/laptop-backgroundIMG.png") top center no-repeat;
+    background-size: cover;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.2s ease-in-out;
+    flex-direction: row;
+    justify-content: flex-end; 
+    margin: 0px;
+    padding: 0 5%;
+    order: 0;
+  }
+
+  .nav-up {
+    top: -60px;
+  }
+
+  main {
+    display: flex;
+    width: 100%;
+    margin: 0px;
+  }
+
+  header {
+    height: calc(80vh - 60px);
   }
 
   .primary {
@@ -230,67 +283,14 @@ hr {
     margin: auto;
   }
 
-  main {
-    display: flex;
-    width: 100%;
-    margin: 0px;
-  }
-
-  header {
-    display: flex;
-    flex-direction: row;
-    height: calc(80vh - 60px);
-    order: 0;
-  }
-  
-  #headline {
-    max-width: 500px;
-  }
-
-  #portrait {
-    width: 25%;
-    height: auto;
-  }
-
-  #hero {
-    display: flex;
-    width: 50%;
-  }
-
-  #icon-menu {
-    height: 20vh;
-    justify-content: space-evenly;
-    order: 1;
-  }
-
-  #menu-icons {
-    display: flex;
-  }
-
-  .technology-used-icons li {
-    text-align: center;
-  }
-
   #nav-name {
     display: inline-block;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-} 
-
-@media screen and (min-width: 750px) {
-  * {
-    font-size: 20px;
-  }
-
-  #nav-name {
     font-size: 30px;
   }
 
   #headline {
     font-size: 23px;
+    max-width: 500px;
   }
 
   #headline span {
@@ -305,16 +305,67 @@ hr {
     font-size: 25px;
   }
 
-  .technology-used-icons i {
-    font-size: 50px;
+  #menu-icons {
+    display: flex;
+  }
+  
+  #menu-icons i {
+    color: black;
+    transition: color 0.5s ease;
+  }
+
+  #menu-icons i:hover {
+    color: #c53211;
+  }
+
+  .technology-used-icons li {
+    text-align: center;
+  }
+
+  #portrait {
+    width: 25%;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+
+  #hero {
+    position: absolute;
+    top: 4%;
+    display: flex;
+    width: 50%;
   }
 
   #icon-menu i {
     font-size: 50px;
+    height: 20vh;
+    justify-content: space-evenly;
+    order: 1;
   }
 
   #portfolio section {
+    width: 80%;
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+
+  .nav-button {
+    font-size: 1.1em;
+    background-color: inherit;
+    color: black;
+    transition: color 0.5s ease;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 0%;
+  }
+  
+  .nav-button:hover {
+    color: #c53211;
+  }
+
+  #contact {
+    margin-bottom: 350px;
   }
 }
