@@ -236,7 +236,7 @@ a { color: black; text-decoration: none; }
     top: 60px;
     width: 80%;
     margin: auto;
-    background: url("/images/laptop-backgroundIMG.png") top center no-repeat;
+    background: url("./images/laptop-backgroundIMG.png") top center no-repeat;
     background-size: cover;
   }
 
