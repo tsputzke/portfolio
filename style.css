@@ -74,7 +74,7 @@ button {
 }
 
 .technology-used-icons {
-  background-color: #f6f6f8;
+  background-color: inherit;
   width: 100%;
   list-style: none;
   padding: 0;
